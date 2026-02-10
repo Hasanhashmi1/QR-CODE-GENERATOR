@@ -1,0 +1,142 @@
+/* ===== Base Reset ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Root Variables ===== */
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --accent: #06b6d4;
+    --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b);
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --text-light: #f8fafc;
+    --text-muted: #cbd5e1;
+    --border-light: rgba(255, 255, 255, 0.15);
+    --success: #16a34a;
+    --success-dark: #15803d;
+}
+
+/* ===== Body ===== */
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-light);
+}
+
+/* ===== Card Container ===== */
+.mainContainer {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 30px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Form Layout ===== */
+.QRContainer form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ===== Label ===== */
+.QRContainer label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* ===== Input ===== */
+.QRContainer input {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.QRContainer input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.3);
+}
+
+/* ===== Primary Button ===== */
+.QRContainer button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.1s;
+}
+
+.QRContainer button:hover {
+    background: var(--primary-dark);
+}
+
+.QRContainer button:active {
+    transform: scale(0.98);
+}
+
+/* ===== QR Code Area ===== */
+#qrcode {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===== Download Button ===== */
+#downloadBtn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: var(--success);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.1s;
+}
+
+#downloadBtn:hover {
+    background: var(--success-dark);
+}
+
+#downloadBtn:active {
+    transform: scale(0.98);
+}
+
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 480px) {
+    .mainContainer {
+        padding: 25px 20px;
+    }
+
+    .QRContainer input,
+    .QRContainer button,
+    #downloadBtn {
+        font-size: 13px;
+        padding: 11px;
+    }
+}
